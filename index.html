@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#eef2ff" />
+    <title>Pulse, Your wellness companion</title>
+    <link rel="stylesheet" href="styles.css?v=logout-screen" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="#" aria-label="Pulse home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32"><path d="M3 17h6l3-8 5 15 3-7h9" /></svg>
+          </span>
+          <span>Pulse</span>
+        </a>
+
+        <nav class="nav" aria-label="Primary navigation">
+          <button class="nav-item active" data-view="today" type="button">
+            <svg viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5v8a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 19.5z" /><path d="M9 21v-6h6v6" /></svg>
+            <span>Today</span>
+          </button>
+          <button class="nav-item" data-view="trends" type="button">
+            <svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20V7" /></svg>
+            <span>Trends</span>
+          </button>
+          <button class="nav-item" data-view="plan" type="button">
+            <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2" /><path d="M8 3v4M16 3v4M3 10h18" /></svg>
+            <span>Plan</span>
+          </button>
+        </nav>
+
+        <div class="sidebar-footer">
+          <button class="profile" type="button" id="profileButton" aria-haspopup="menu" aria-expanded="false" aria-controls="profileMenu">
+            <span class="avatar">AS</span>
+            <span class="profile-copy">
+              <strong id="profileName">Alex Smith</strong>
+              <small id="profileLabel">Local profile</small>
+            </span>
+            <svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="1" /><circle cx="12" cy="12" r="1" /><circle cx="19" cy="12" r="1" /></svg>
+          </button>
+          <div class="profile-menu" id="profileMenu" role="menu" aria-labelledby="profileButton" hidden></div>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <button class="mobile-menu" id="mobileMenu" type="button" aria-label="Open navigation">
+            <svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
+          </button>
+          <div class="date-copy">
+            <p id="todayLabel">Today</p>
+            <h1 id="viewTitle">Good morning, Alex</h1>
+          </div>
+          <div class="top-actions">
+            <button class="icon-button" id="themeButton" type="button" aria-label="Toggle theme">
+              <svg class="moon" viewBox="0 0 24 24"><path d="M20 15.5A8.5 8.5 0 0 1 8.5 4 8.5 8.5 0 1 0 20 15.5Z" /></svg>
+            </button>
+            <button class="checkin-button" id="checkinButton" type="button">
+              <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" /></svg>
+              Daily check-in
+            </button>
+          </div>
+        </header>
+
+        <section class="view active" id="todayView">
+          <div class="hero-grid">
+            <article class="hero-card">
+              <div class="hero-copy">
+                <span class="eyebrow"><i></i> Wellness signal</span>
+                <h2><span id="wellnessScore">82</span><small>/100</small></h2>
+                <p id="signalText">You are recharging well today</p>
+                <div class="signal-dots" aria-label="Three of five wellness indicators">
+                  <i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i>
+                </div>
+              </div>
+              <div class="orbit" aria-label="Wellness score visualization">
+                <span class="orbit-ring ring-one"></span>
+                <span class="orbit-ring ring-two"></span>
+                <span class="orbit-core">
+                  <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z" /></svg>
+                </span>
+              </div>
+            </article>
+
+            <article class="weather-card">
+              <div class="weather-head">
+                <span class="eyebrow">Today's rhythm</span>
+                <span class="live-dot">On track</span>
+              </div>
+              <div class="rhythm-row">
+                <div>
+                  <small>Sleep</small>
+                  <strong id="sleepValue">7h 42m</strong>
+                </div>
+                <div class="mini-sun">
+                  <span></span><span></span><span></span><span></span>
+                </div>
+              </div>
+              <p id="rhythmInsight">Your most consistent week in 3 weeks.</p>
+            </article>
+          </div>
+
+          <div class="section-heading">
+            <div>
+              <p>Daily care</p>
+              <h2>Move at your own pace</h2>
+            </div>
+            <button class="text-button" type="button" id="resetGoals">Reset</button>
+          </div>
+
+          <div class="care-grid">
+            <button class="care-card" data-care="water" type="button">
+              <span class="care-icon water">
+                <svg viewBox="0 0 24 24"><path d="M12 3S5.5 10.2 5.5 15a6.5 6.5 0 0 0 13 0C18.5 10.2 12 3 12 3Z" /></svg>
+              </span>
+              <span class="care-copy"><small>Hydration</small><strong id="waterText">5 of 8 glasses</strong></span>
+              <span class="progress"><i id="waterProgress" style="width:62.5%"></i></span>
+              <span class="care-action">+ Add</span>
+            </button>
+
+            <button class="care-card" data-care="steps" type="button">
+              <span class="care-icon steps">
+                <svg viewBox="0 0 24 24"><path d="M8 14c-2 1-3 3-2 5 1 2 5 1 6-1 1-3-1-5-4-4ZM16 10c-2 1-3 3-2 5 1 2 5 1 6-1 1-3-1-5-4-4ZM9 4c-2 1-3 3-2 5 1 2 5 1 6-1 1-3-1-5-4-4Z" /></svg>
+              </span>
+              <span class="care-copy"><small>Movement</small><strong id="stepsText">6,420 steps</strong></span>
+              <span class="progress"><i id="stepsProgress" style="width:64.2%"></i></span>
+              <span class="care-action">+ 500</span>
+            </button>
+
+            <button class="care-card" data-care="mindful" type="button">
+              <span class="care-icon mindful">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M8 13c1.5 2 6.5 2 8 0M9 9h.01M15 9h.01" /></svg>
+              </span>
+              <span class="care-copy"><small>Mindful moment</small><strong id="mindfulText">Not started</strong></span>
+              <span class="progress"><i id="mindfulProgress" style="width:0%"></i></span>
+              <span class="care-action">Start</span>
+            </button>
+          </div>
+
+          <div class="lower-grid">
+            <article class="focus-card">
+              <div class="focus-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.64 5.64l2.12 2.12M16.24 16.24l2.12 2.12M18.36 5.64l-2.12 2.12M7.76 16.24l-2.12 2.12" /><circle cx="12" cy="12" r="4" /></svg>
+              </div>
+              <div>
+                <span class="eyebrow">Gentle nudge</span>
+                <h3 id="nudgeTitle">A two-minute reset</h3>
+                <p id="nudgeText">Step outside and notice five things around you.</p>
+              </div>
+              <button class="round-button" id="nudgeButton" type="button" aria-label="Complete nudge">
+                <svg viewBox="0 0 24 24"><path d="m9 18 6-6-6-6" /></svg>
+              </button>
+            </article>
+
+            <article class="week-card">
+              <div class="week-head"><span>7-day balance</span><strong id="balanceValue">74%</strong></div>
+              <div class="bars" id="weekBars" aria-label="Weekly wellness chart"></div>
+            </article>
+          </div>
+        </section>
+
+        <section class="view" id="trendsView">
+          <div class="view-header">
+            <div><span class="eyebrow">Last 30 days</span><h2>Your health pattern</h2></div>
+            <select id="trendRange" aria-label="Trend range">
+              <option value="30">30 days</option>
+              <option value="14">14 days</option>
+              <option value="7">7 days</option>
+            </select>
+          </div>
+          <div class="trends-grid">
+            <article class="trend-card large">
+              <div class="trend-head"><div><small>Wellness score</small><strong id="trendAverage">78</strong></div><span class="trend-up">↑ 8%</span></div>
+              <canvas id="trendCanvas" width="800" height="300"></canvas>
+            </article>
+            <article class="trend-card">
+              <small>Average sleep</small><strong>7h 28m</strong>
+              <div class="stat-orbit sleep"><span>92%</span></div>
+              <p>Within your ideal range</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="view" id="planView">
+          <div class="view-header">
+            <div><span class="eyebrow">Personal plan</span><h2>Small steps, steady progress</h2></div>
+          </div>
+          <div class="plan-grid">
+            <article class="plan-main">
+              <div class="plan-ring"><span id="planPercent">60%</span></div>
+              <div><small>Weekly intention</small><h3 id="planTitle">Move & recharge</h3><p id="planText">Complete 4 mindful activities and keep a regular sleep routine.</p></div>
+            </article>
+            <article class="habit-card">
+              <div class="habit-head"><span>Today's habits</span><strong id="habitCount">2 / 4</strong></div>
+              <div id="habitList"></div>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div class="modal-backdrop" id="checkinModal" aria-hidden="true">
+      <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <button class="modal-close" id="closeModal" type="button" aria-label="Close">×</button>
+        <span class="eyebrow">1 minute check-in</span>
+        <h2 id="modalTitle">How are you feeling?</h2>
+        <div class="mood-options" id="moodOptions">
+          <button type="button" data-mood="1"><span>😞</span><small>Low</small></button>
+          <button type="button" data-mood="2"><span>😕</span><small>Off</small></button>
+          <button type="button" data-mood="3"><span>😐</span><small>Okay</small></button>
+          <button type="button" data-mood="4"><span>🙂</span><small>Good</small></button>
+          <button type="button" data-mood="5"><span>😊</span><small>Great</small></button>
+        </div>
+        <label class="sleep-field">
+          <span>Sleep last night</span>
+          <strong id="sleepHours">7.5 hours</strong>
+          <input id="sleepRange" type="range" min="4" max="10" step=".5" value="7.5" />
+        </label>
+        <button class="save-button" id="saveCheckin" type="button">Save check-in</button>
+      </div>
+    </div>
+
+    <div class="modal-backdrop" id="profileModal" aria-hidden="true">
+      <form class="modal profile-modal" id="profileForm" role="dialog" aria-modal="true" aria-labelledby="profileModalTitle">
+        <button class="modal-close" id="closeProfileModal" type="button" aria-label="Close">×</button>
+        <span class="eyebrow">A fresh start</span>
+        <h2 id="profileModalTitle">Create a profile</h2>
+        <label class="profile-name-field" for="newProfileName">
+          <span>Name</span>
+          <input id="newProfileName" name="name" type="text" maxlength="32" autocomplete="off" placeholder="How should we call you?" required />
+        </label>
+        <p class="profile-privacy-note">This profile is saved in this browser only. It is not password-protected.</p>
+        <button class="save-button" type="submit">Create profile</button>
+      </form>
+    </div>
+
+    <div class="modal-backdrop" id="profileChooser" aria-hidden="true">
+      <section class="modal profile-chooser" role="dialog" aria-modal="true" aria-labelledby="profileChooserTitle">
+        <span class="eyebrow">Pulse profiles</span>
+        <h2 id="profileChooserTitle">You’re logged out</h2>
+        <p class="chooser-intro">Choose a profile to continue.</p>
+        <div class="profile-chooser-list" id="profileChooserList"></div>
+        <button class="profile-add chooser-add" id="chooserAddProfile" type="button">+ Create a new profile</button>
+        <p class="profile-privacy-note">Profiles are stored in this browser without passwords. Anyone with access to this device can open them.</p>
+      </section>
+    </div>
+
+    <div class="toast" id="toast" role="status"></div>
+    <script src="app.js?v=logout-screen"></script>
+  </body>
+</html>
